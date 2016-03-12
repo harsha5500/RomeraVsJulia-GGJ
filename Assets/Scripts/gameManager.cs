@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class gameManager : MonoBehaviour {
+public class GameManager : MonoBehaviour
+{
 
 	public int range;
 
@@ -17,22 +18,24 @@ public class gameManager : MonoBehaviour {
 	int stalkStatusTemp;
 
 	// Use this for initialization
-	void Start () {
+	void Start ()
+	{
 		stalkStatusTemp = 0;
 		playerAScore = 0;
 		playerBScore = 0;
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+	{
 		//Update the fog of war
 
 
 		//Start the random game state thingy.
-		StartCoroutine(rand());
+		StartCoroutine (rand ());
 
-		networkSync scriptA = playerA.GetComponent<networkSync>();
-		networkSync scriptB = playerA.GetComponent<networkSync>();
+		NetworkSync scriptA = playerA.GetComponent<NetworkSync> ();
+		NetworkSync scriptB = playerA.GetComponent<NetworkSync> ();
 
 		/*if (Network.isClient) {
 			UnityEngine.Debug.Log ("CLIENT");
@@ -47,15 +50,16 @@ public class gameManager : MonoBehaviour {
 	}
 
 	//Determine stalk status randomly. Update variables accordingly.
-	IEnumerator  rand (){
-		int rand = Random.Range(0,100);
+	IEnumerator  rand ()
+	{
+		int rand = Random.Range (0, 100);
 		
 		stalkStatusTemp = stalkStatus;
 		
-		if(rand > range) {
-			stalkStatus = Random.Range(0,2);
+		if (rand > range) {
+			stalkStatus = Random.Range (0, 2);
 		}
-		yield return new WaitForSeconds(0);
+		yield return new WaitForSeconds (0);
 	}
 
 }

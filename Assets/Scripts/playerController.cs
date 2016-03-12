@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class playerController : MonoBehaviour {
+public class PlayerController : MonoBehaviour {
 
 	// --- PLAYER VARIABLES ---
 	public Vector3 playerPos;

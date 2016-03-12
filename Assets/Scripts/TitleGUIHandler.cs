@@ -47,12 +47,8 @@ public class TitleGUIHandler : MonoBehaviour {
 		}
 
 
-
 		if (GUI.Button (new Rect ((int)Screen.width - 80, 20, 60, 40), "Exit")) {
 			Application.Quit();
 		}
-
 	}
-	
-	
 }
